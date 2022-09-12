@@ -117,24 +117,74 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named carthage
+# Target rules for targets named carthage-code-gen
 
 # Build rule for target.
-carthage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 carthage
-.PHONY : carthage
+carthage-code-gen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 carthage-code-gen
+.PHONY : carthage-code-gen
 
 # fast build rule for target.
-carthage/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage.dir/build.make CMakeFiles/carthage.dir/build
-.PHONY : carthage/fast
+carthage-code-gen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-code-gen.dir/build.make CMakeFiles/carthage-code-gen.dir/build
+.PHONY : carthage-code-gen/fast
+
+#=============================================================================
+# Target rules for targets named carthage-parse
+
+# Build rule for target.
+carthage-parse: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 carthage-parse
+.PHONY : carthage-parse
+
+# fast build rule for target.
+carthage-parse/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-parse.dir/build.make CMakeFiles/carthage-parse.dir/build
+.PHONY : carthage-parse/fast
+
+#=============================================================================
+# Target rules for targets named carthage-lex
+
+# Build rule for target.
+carthage-lex: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 carthage-lex
+.PHONY : carthage-lex
+
+# fast build rule for target.
+carthage-lex/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-lex.dir/build.make CMakeFiles/carthage-lex.dir/build
+.PHONY : carthage-lex/fast
+
+src/code-gen/main.o: src/code-gen/main.cpp.o
+.PHONY : src/code-gen/main.o
+
+# target to build an object file
+src/code-gen/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-code-gen.dir/build.make CMakeFiles/carthage-code-gen.dir/src/code-gen/main.cpp.o
+.PHONY : src/code-gen/main.cpp.o
+
+src/code-gen/main.i: src/code-gen/main.cpp.i
+.PHONY : src/code-gen/main.i
+
+# target to preprocess a source file
+src/code-gen/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-code-gen.dir/build.make CMakeFiles/carthage-code-gen.dir/src/code-gen/main.cpp.i
+.PHONY : src/code-gen/main.cpp.i
+
+src/code-gen/main.s: src/code-gen/main.cpp.s
+.PHONY : src/code-gen/main.s
+
+# target to generate assembly for a file
+src/code-gen/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-code-gen.dir/build.make CMakeFiles/carthage-code-gen.dir/src/code-gen/main.cpp.s
+.PHONY : src/code-gen/main.cpp.s
 
 src/lexer/main.o: src/lexer/main.cpp.o
 .PHONY : src/lexer/main.o
 
 # target to build an object file
 src/lexer/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage.dir/build.make CMakeFiles/carthage.dir/src/lexer/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-lex.dir/build.make CMakeFiles/carthage-lex.dir/src/lexer/main.cpp.o
 .PHONY : src/lexer/main.cpp.o
 
 src/lexer/main.i: src/lexer/main.cpp.i
@@ -142,7 +192,7 @@ src/lexer/main.i: src/lexer/main.cpp.i
 
 # target to preprocess a source file
 src/lexer/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage.dir/build.make CMakeFiles/carthage.dir/src/lexer/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-lex.dir/build.make CMakeFiles/carthage-lex.dir/src/lexer/main.cpp.i
 .PHONY : src/lexer/main.cpp.i
 
 src/lexer/main.s: src/lexer/main.cpp.s
@@ -150,8 +200,32 @@ src/lexer/main.s: src/lexer/main.cpp.s
 
 # target to generate assembly for a file
 src/lexer/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage.dir/build.make CMakeFiles/carthage.dir/src/lexer/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-lex.dir/build.make CMakeFiles/carthage-lex.dir/src/lexer/main.cpp.s
 .PHONY : src/lexer/main.cpp.s
+
+src/parser/main.o: src/parser/main.cpp.o
+.PHONY : src/parser/main.o
+
+# target to build an object file
+src/parser/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-parse.dir/build.make CMakeFiles/carthage-parse.dir/src/parser/main.cpp.o
+.PHONY : src/parser/main.cpp.o
+
+src/parser/main.i: src/parser/main.cpp.i
+.PHONY : src/parser/main.i
+
+# target to preprocess a source file
+src/parser/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-parse.dir/build.make CMakeFiles/carthage-parse.dir/src/parser/main.cpp.i
+.PHONY : src/parser/main.cpp.i
+
+src/parser/main.s: src/parser/main.cpp.s
+.PHONY : src/parser/main.s
+
+# target to generate assembly for a file
+src/parser/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-parse.dir/build.make CMakeFiles/carthage-parse.dir/src/parser/main.cpp.s
+.PHONY : src/parser/main.cpp.s
 
 # Help Target
 help:
@@ -161,10 +235,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... carthage"
+	@echo "... carthage-code-gen"
+	@echo "... carthage-lex"
+	@echo "... carthage-parse"
+	@echo "... src/code-gen/main.o"
+	@echo "... src/code-gen/main.i"
+	@echo "... src/code-gen/main.s"
 	@echo "... src/lexer/main.o"
 	@echo "... src/lexer/main.i"
 	@echo "... src/lexer/main.s"
+	@echo "... src/parser/main.o"
+	@echo "... src/parser/main.i"
+	@echo "... src/parser/main.s"
 .PHONY : help
 
 

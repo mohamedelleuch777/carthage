@@ -1,3 +1,5 @@
 /Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles/rebuild_cache.dir
 /Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles/edit_cache.dir
-/Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles/carthage.dir
+/Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles/carthage-code-gen.dir
+/Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles/carthage-parse.dir
+/Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles/carthage-lex.dir

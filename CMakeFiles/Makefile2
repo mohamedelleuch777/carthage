@@ -63,7 +63,9 @@ CMAKE_BINARY_DIR = /Users/mohamedelleuch/Programming/gnu_c_cpp/carthage
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/carthage.dir/all
+all: CMakeFiles/carthage-code-gen.dir/all
+all: CMakeFiles/carthage-parse.dir/all
+all: CMakeFiles/carthage-lex.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +73,88 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/carthage.dir/clean
+clean: CMakeFiles/carthage-code-gen.dir/clean
+clean: CMakeFiles/carthage-parse.dir/clean
+clean: CMakeFiles/carthage-lex.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/carthage.dir
+# Target rules for target CMakeFiles/carthage-code-gen.dir
 
 # All Build rule for target.
-CMakeFiles/carthage.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage.dir/build.make CMakeFiles/carthage.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage.dir/build.make CMakeFiles/carthage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles --progress-num=1,2 "Built target carthage"
-.PHONY : CMakeFiles/carthage.dir/all
+CMakeFiles/carthage-code-gen.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-code-gen.dir/build.make CMakeFiles/carthage-code-gen.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-code-gen.dir/build.make CMakeFiles/carthage-code-gen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles --progress-num=1,2 "Built target carthage-code-gen"
+.PHONY : CMakeFiles/carthage-code-gen.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/carthage.dir/rule: cmake_check_build_system
+CMakeFiles/carthage-code-gen.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/carthage.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/carthage-code-gen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles 0
-.PHONY : CMakeFiles/carthage.dir/rule
+.PHONY : CMakeFiles/carthage-code-gen.dir/rule
 
 # Convenience name for target.
-carthage: CMakeFiles/carthage.dir/rule
-.PHONY : carthage
+carthage-code-gen: CMakeFiles/carthage-code-gen.dir/rule
+.PHONY : carthage-code-gen
 
 # clean rule for target.
-CMakeFiles/carthage.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage.dir/build.make CMakeFiles/carthage.dir/clean
-.PHONY : CMakeFiles/carthage.dir/clean
+CMakeFiles/carthage-code-gen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-code-gen.dir/build.make CMakeFiles/carthage-code-gen.dir/clean
+.PHONY : CMakeFiles/carthage-code-gen.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/carthage-parse.dir
+
+# All Build rule for target.
+CMakeFiles/carthage-parse.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-parse.dir/build.make CMakeFiles/carthage-parse.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-parse.dir/build.make CMakeFiles/carthage-parse.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles --progress-num=5,6 "Built target carthage-parse"
+.PHONY : CMakeFiles/carthage-parse.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/carthage-parse.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/carthage-parse.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles 0
+.PHONY : CMakeFiles/carthage-parse.dir/rule
+
+# Convenience name for target.
+carthage-parse: CMakeFiles/carthage-parse.dir/rule
+.PHONY : carthage-parse
+
+# clean rule for target.
+CMakeFiles/carthage-parse.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-parse.dir/build.make CMakeFiles/carthage-parse.dir/clean
+.PHONY : CMakeFiles/carthage-parse.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/carthage-lex.dir
+
+# All Build rule for target.
+CMakeFiles/carthage-lex.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-lex.dir/build.make CMakeFiles/carthage-lex.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-lex.dir/build.make CMakeFiles/carthage-lex.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles --progress-num=3,4 "Built target carthage-lex"
+.PHONY : CMakeFiles/carthage-lex.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/carthage-lex.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/carthage-lex.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedelleuch/Programming/gnu_c_cpp/carthage/CMakeFiles 0
+.PHONY : CMakeFiles/carthage-lex.dir/rule
+
+# Convenience name for target.
+carthage-lex: CMakeFiles/carthage-lex.dir/rule
+.PHONY : carthage-lex
+
+# clean rule for target.
+CMakeFiles/carthage-lex.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/carthage-lex.dir/build.make CMakeFiles/carthage-lex.dir/clean
+.PHONY : CMakeFiles/carthage-lex.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

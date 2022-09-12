@@ -47,5 +47,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/carthage.dir/DependInfo.cmake"
+  "CMakeFiles/carthage-code-gen.dir/DependInfo.cmake"
+  "CMakeFiles/carthage-parse.dir/DependInfo.cmake"
+  "CMakeFiles/carthage-lex.dir/DependInfo.cmake"
   )
