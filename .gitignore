@@ -4,3 +4,5 @@ node_modules*
 bin/*
 CMakeFiles/
 CMakeCache.txt
+cmake_install.cmake
+Makefile
