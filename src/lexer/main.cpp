@@ -5,7 +5,7 @@
 #include <fstream>
 
 using namespace std;
-string source = "const x = 45;";
+string source;
 
 // int main_old()
 // {
@@ -15,24 +15,18 @@ string source = "const x = 45;";
 //     cout << "this is a test program\n";
 // }
 
-struct stComment {
-    string opening;
-    string ending;
-};
-vector<stComment> CommentList = {
-    {"//","\n"}, // inline comment
-    {"/*","*/"}  // block comment
-};
-
 string RemoveComments(string source);
 string LoadSourceFile(string path);
 
+/****************************************************************************
+*                               MAIN FUNCTION
+****************************************************************************/
 int main() {
     cout << "Compiling..." << endl;
     int i = 0;
     source = LoadSourceFile("example/test.js");
     source = RemoveComments(source);
-// cout << source << endl;
+    cout << source << endl;
 return 0;
     while (i<source.size())
     {
@@ -57,25 +51,30 @@ string LoadSourceFile(string path) {
 
 string RemoveComments(string source) {
     string newSource;
-    for(int cmt=0; cmt<CommentList.size(); cmt++) {
-        int i = 0;
-        bool insideBlock = false;
-        while (i<source.size())
-        {
-            char currentChar = source[i];
-            if(!insideBlock && currentChar=='/' && source.size()>(i+1)) {
-                if(source[i+1]=='/' || source[i+1]=='*') {
-                    insideBlock=true;
-                }
+    int i = 0;
+    bool insideInlineComment = false;
+    bool insideBlockComment = false;
+    while (i<source.size())
+    {
+        char currentChar = source[i];
+        if(!insideInlineComment && currentChar=='/' && source.size()>(i+1)) {
+            if(source[i+1]=='/') {
+                insideInlineComment=true;
             }
-            else if(insideBlock && currentChar=='/' && source[i-1]=='*') {
-
+            else if(source[i+1]=='*') {
+                insideBlockComment=true;
             }
-            else if(!insideBlock) {
-                newSource += currentChar;
-            }
-            i++;
         }
+        else if(insideBlockComment && currentChar=='/' && source[i-1]=='*') {
+            insideBlockComment=false;
+        }
+        else if(insideInlineComment && currentChar=='\n') {
+            insideInlineComment=false;
+        }
+        else if(!insideInlineComment && !insideBlockComment) {
+            newSource += currentChar;
+        }
+        i++;
     }
     return newSource;
 }
